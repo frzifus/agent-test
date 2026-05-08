@@ -2,6 +2,33 @@ package agent_test
 
 import "testing"
 
+func TestAdd(t *testing.T) {
+	tests := []struct {
+		name     string
+		a, b     int
+		expected int
+	}{
+		{"positive numbers", 2, 3, 5},
+		{"zero and positive", 0, 5, 5},
+		{"positive and zero", 5, 0, 5},
+		{"zero and zero", 0, 0, 0},
+		{"negative and positive", -3, 5, 2},
+		{"positive and negative", 5, -3, 2},
+		{"both negative", -3, -5, -8},
+		{"large numbers", 1000000, 2000000, 3000000},
+		{"large negative numbers", -1000000, -2000000, -3000000},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := Add(tt.a, tt.b)
+			if result != tt.expected {
+				t.Errorf("Add(%d, %d) = %d; expected %d", tt.a, tt.b, result, tt.expected)
+			}
+		})
+	}
+}
+
 func TestIsOdd(t *testing.T) {
 	tests := []struct {
 		name     string

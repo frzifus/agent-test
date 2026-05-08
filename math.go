@@ -19,3 +19,15 @@ func Div(a, b int) (int, error) {
 	// TODO
 	return 0, nil
 }
+
+// IsOdd returns true if n is odd.
+// Handles negative numbers correctly.
+func IsOdd(n int) bool {
+	return n%2 != 0
+}
+
+// IsEven returns true if n is even.
+// Handles negative numbers correctly.
+func IsEven(n int) bool {
+	return n%2 == 0
+}

@@ -19,3 +19,11 @@ func Div(a, b int) (int, error) {
 	// TODO
 	return 0, nil
 }
+
+func IsOdd(n int) bool {
+	return n%2 != 0
+}
+
+func IsEven(n int) bool {
+	return n%2 == 0
+}

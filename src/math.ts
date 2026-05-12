@@ -48,6 +48,9 @@ export function div(a: number, b: number): number {
  * @returns true if n is odd, false otherwise
  */
 export function isOdd(n: number): boolean {
+  if (!Number.isFinite(n)) {
+    return false;
+  }
   return n % 2 !== 0;
 }
 
